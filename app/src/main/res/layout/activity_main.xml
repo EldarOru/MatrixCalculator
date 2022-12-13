@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <EditText
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/matrix1_12"
+        style="@style/MatrixCell"
+        android:id="@+id/matrix1_11"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <EditText
+        style="@style/MatrixCell"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/matrix1_11"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/matrix1_12"/>
+
+    <EditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix1_11"
+        app:layout_constraintEnd_toStartOf="@id/matrix1_22"
+        style="@style/MatrixCell"
+        android:id="@+id/matrix1_21"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <EditText
+        style="@style/MatrixCell"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix1_12"
+        app:layout_constraintStart_toEndOf="@id/matrix1_21"
+        android:id="@+id/matrix1_22"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix1_22"
+        android:gravity="center">
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/sum_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/diff_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            app:layout_constraintStart_toStartOf="parent"/>
+        <Button
+            android:layout_margin="5dp"
+            android:id="@+id/multiply_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <EditText
+        app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/matrix2_12"
+        style="@style/MatrixCell"
+        android:id="@+id/matrix2_11"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <EditText
+        style="@style/MatrixCell"
+        app:layout_constraintTop_toBottomOf="@id/buttons_layout"
+        app:layout_constraintStart_toEndOf="@id/matrix2_11"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/matrix2_12"/>
+
+    <EditText
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix2_11"
+        app:layout_constraintEnd_toStartOf="@id/matrix2_22"
+        style="@style/MatrixCell"
+        android:id="@+id/matrix2_21"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <EditText
+        style="@style/MatrixCell"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix2_12"
+        app:layout_constraintStart_toEndOf="@id/matrix2_21"
+        android:id="@+id/matrix2_22"
+        app:layout_constraintHorizontal_chainStyle="packed"/>
+
+    <TextView
+        android:id="@+id/answer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/matrix2_22"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
